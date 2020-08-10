@@ -30,7 +30,7 @@ class HState extends State<Home> {
 
   getData() async {
     http.Response r = await http.get('https://filipino-cuisine-app.firebaseio.com/data.json');
-    fd = json.decode(r.body);
+    fd = json.decode(r.body).values.toList();
     setState(() => fi = fd[0]);
   }
 
